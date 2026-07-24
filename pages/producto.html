@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <header class="header-oficial">
+    <img src="../Imagenes/header.jpg" alt="FarmaNova Logo" class="img-logo">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html" style="color: #ffffff;"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html" style="color: #ffffff;"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html" style="color: #ffffff;"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html" style="color: #ffffff;"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito" style="position: relative; color: #ffffff;">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" style="position: absolute; top: -10px; right: -15px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; font-weight: bold;">0</span>
+        </a>
+        <a href="#" id="abrirLogin" style="color: #ffffff;"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <p class="miga-de-pan">
+        <a href="../index.html">Inicio</a> /
+        <a href="catalogo.html">Catálogo</a> /
+        <span id="prodMigaCategoria">Categoría</span> /
+        <span id="prodMigaNombre">Producto</span>
+    </p>
+
+    <!-- Ficha del producto: se llena dinámicamente vía app.js según ?id= en la URL -->
+    <div id="detalleProducto" class="detalle-producto" style="display:none;">
+        <div class="detalle-producto-imgwrap">
+            <img id="prodImagen" src="" alt="Producto">
+        </div>
+        <div class="detalle-producto-info">
+            <span id="prodCategoria" class="detalle-producto-categoria">Categoría</span>
+            <h1 id="prodNombre">Nombre del producto</h1>
+            <div>
+                <span id="prodPrecio" class="detalle-producto-precio">S/ 0.00</span>
+                <span id="prodPromo" class="detalle-producto-promo">Promo</span>
+            </div>
+            <p id="prodDescripcion" class="detalle-producto-desc">Descripción del producto.</p>
+
+            <div class="detalle-producto-entrega">
+                <div><i class="fa-solid fa-truck"></i> Despacho a domicilio disponible</div>
+                <div><i class="fa-solid fa-store"></i> Retiro gratis en botica</div>
+            </div>
+
+            <div class="detalle-producto-compra">
+                <div class="selector-cantidad">
+                    <button type="button" id="btnMenosCantidad">-</button>
+                    <input type="number" id="prodCantidad" value="1" min="1">
+                    <button type="button" id="btnMasCantidad">+</button>
+                </div>
+                <button id="btnAgregarDetalle" class="btn-agregar-detalle">
+                    <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+            </div>
+            <p id="prodMensajeExito" class="detalle-producto-mensaje-exito">
+                <i class="fa-solid fa-circle-check"></i> Producto agregado a tu carrito.
+            </p>
+        </div>
+    </div>
+
+    <!-- Estado cuando el id de la URL no corresponde a ningún producto -->
+    <div id="productoNoEncontrado" class="producto-no-encontrado" style="display:none;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h2 style="color:#144D6C;">Producto no encontrado</h2>
+        <p style="color:#555;">El producto que buscas ya no está disponible o el enlace es incorrecto.</p>
+        <a href="catalogo.html" class="btn-ver-mas">Volver al catálogo</a>
+    </div>
+
+    <section class="seccion-relacionados">
+        <h3 class="titulo-categoria cat-cuidado"><i class="fa-solid fa-layer-group"></i> Productos relacionados</h3>
+        <div class="productos-grid" id="prodRelacionados"></div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo Virtual</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="politicas.html">Políticas de Privacidad</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+    <script>
+        // Pequeños botones +/- del selector de cantidad (interacción simple,
+        // el resto de la lógica de esta página vive en app.js -> initPaginaProducto)
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('prodCantidad');
+            const btnMas = document.getElementById('btnMasCantidad');
+            const btnMenos = document.getElementById('btnMenosCantidad');
+            if (btnMas && input) btnMas.addEventListener('click', () => input.value = Math.max(1, (parseInt(input.value, 10) || 1) + 1));
+            if (btnMenos && input) btnMenos.addEventListener('click', () => input.value = Math.max(1, (parseInt(input.value, 10) || 1) - 1));
+        });
+    </script>
+</body>
+</html>

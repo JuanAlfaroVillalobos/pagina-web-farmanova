@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <header class="header-oficial">
+    <img src="../Imagenes/header.jpg" alt="FarmaNova Logo" class="img-logo">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html" style="color: #ffffff;"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html" style="color: #ffffff;"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html" style="color: #ffffff;"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html" style="color: #ffffff;"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito" style="position: relative; color: #ffffff;">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" style="position: absolute; top: -10px; right: -15px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; font-weight: bold;">0</span>
+        </a>
+        <a href="#" id="abrirLogin" style="color: #ffffff;"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <section class="contenedor-legal">
+        <h1><i class="fa-solid fa-user-shield"></i> Políticas de Privacidad</h1>
+        <p class="legal-actualizado">Última actualización: 1 de julio de 2026</p>
+
+        <p>En FarmaNova S.A.C. ("FarmaNova", "nosotros") nos importa la privacidad de nuestros usuarios y clientes.
+        Este documento es una plantilla de referencia y describe, de forma general, cómo recopilamos, usamos y
+        protegemos tu información personal al utilizar nuestro sitio web y nuestros servicios. Te recomendamos
+        revisarlo junto con un asesor legal antes de publicarlo como política oficial de tu empresa.</p>
+
+        <h2>1. Información que recopilamos</h2>
+        <p>Podemos recopilar los siguientes datos cuando navegas por el sitio, te afilias a NovaClub, realizas una
+        compra o te pones en contacto con nosotros:</p>
+        <ul>
+            <li>Datos de identificación: nombre completo y documento de identidad.</li>
+            <li>Datos de contacto: correo electrónico, número de celular y dirección de envío.</li>
+            <li>Datos de la transacción: productos adquiridos, monto y método de pago seleccionado.</li>
+            <li>Datos técnicos: tipo de dispositivo, navegador y cookies necesarias para el funcionamiento del carrito de compras.</li>
+        </ul>
+
+        <h2>2. Finalidad del tratamiento de datos</h2>
+        <p>Usamos tu información para:</p>
+        <ul>
+            <li>Procesar y despachar tus pedidos.</li>
+            <li>Gestionar tu afiliación al programa de fidelidad NovaClub y la acumulación de NovaPuntos.</li>
+            <li>Responder tus consultas a través del formulario de contacto.</li>
+            <li>Enviarte comunicaciones comerciales, solo si nos autorizas expresamente a hacerlo.</li>
+            <li>Cumplir con obligaciones legales y regulatorias del sector farmacéutico.</li>
+        </ul>
+
+        <h2>3. Almacenamiento del carrito de compras</h2>
+        <p>Para tu comodidad, el contenido de tu carrito se guarda temporalmente en el almacenamiento local de tu
+        navegador (localStorage). Esta información permanece únicamente en tu dispositivo y se elimina automáticamente
+        al completar una compra o al borrar los datos de navegación.</p>
+
+        <h2>4. Compartición de información con terceros</h2>
+        <p>No vendemos tu información personal. Podemos compartir datos estrictamente necesarios con:</p>
+        <ul>
+            <li>Empresas de courier, para la entrega de tus pedidos.</li>
+            <li>Pasarelas de pago, para procesar transacciones de forma segura.</li>
+            <li>Autoridades competentes, cuando la ley así lo exija.</li>
+        </ul>
+
+        <h2>5. Derechos del usuario</h2>
+        <p>Como titular de tus datos personales, puedes solicitar en cualquier momento el acceso, rectificación,
+        cancelación u oposición al tratamiento de tu información, escribiéndonos a través de nuestra
+        <a href="contacto.html">página de contacto</a>.</p>
+
+        <h2>6. Seguridad de la información</h2>
+        <p>Aplicamos medidas técnicas y organizativas razonables para proteger tus datos frente a accesos no
+        autorizados, pérdida o alteración. Ningún sistema es 100% infalible, por lo que te recomendamos no compartir
+        tus credenciales de acceso con terceros.</p>
+
+        <h2>7. Cambios a esta política</h2>
+        <p>Podemos actualizar esta política de privacidad periódicamente. Cualquier cambio relevante será publicado
+        en esta misma página, indicando la fecha de la última actualización.</p>
+
+        <h2>8. Contacto</h2>
+        <p>Si tienes dudas sobre el tratamiento de tus datos personales, escríbenos a través de nuestro
+        <a href="contacto.html">formulario de contacto</a> o llama a nuestra central: (01) 612-5000.</p>
+
+        <a href="../index.html" class="btn-ver-mas" style="margin-top: 20px; display: inline-block;">
+            <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo Virtual</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="politicas.html">Políticas de Privacidad</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmaNova - Tu salud, a un clic</title>
+    <link rel="icon" href="Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="modalOferta" class="modal-overlay">
+        <div class="modal-content">
+            <button id="cerrarModal" class="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="color: #004b79;">¡BIENVENIDO A FARMANOVA! 💊</h2>
+            <img src="Imagenes/ImagenPromocion.png" alt="Promo" style="width: 100%; border-radius: 8px; margin: 15px 0;">
+            <p style="font-size: 1.2rem;">Llévate <strong>30% de DSCTO</strong> en tu primera compra usando el código:</p>
+            <h3 style="background: #009ca6; color: white; padding: 10px; border-radius: 5px; margin: 15px 0; font-size: 1.5rem;">NOVA30</h3>
+            <button id="btnAprovechar" class="btn-novaclub" style="width: 100%;">¡Aprovechar ahora!</button>
+        </div>
+    </div>
+
+    <!-- Modal de Afiliación NovaClub: pide los mismos datos que el checkout de compra.html -->
+    <div id="modalAfiliacion" class="modal-overlay">
+        <div class="modal-content modal-formulario">
+            <button id="cerrarModalAfiliacion" class="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
+
+            <div id="formAfiliacionWrap">
+                <h2 style="color: #144D6C; text-align:left;"><i class="fa-solid fa-ranking-star" style="color:#F2C278;"></i> Únete a NovaClub</h2>
+                <p style="text-align:left; color:#555; margin-bottom:20px;">Regístrate gratis y empieza a acumular NovaPuntos desde tu primera compra.</p>
+
+                <form id="formAfiliacion">
+                    <div class="grupo-input-generico">
+                        <label for="afNombre">Nombre Completo</label>
+                        <input type="text" id="afNombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="afDni">Documento de Identidad</label>
+                        <input type="text" id="afDni" name="dni" placeholder="Ej. 74589632" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="afCorreo">Correo Electrónico</label>
+                        <input type="email" id="afCorreo" name="correo" placeholder="juan.perez@correo.com" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="afTelefono">Número de Celular</label>
+                        <input type="tel" id="afTelefono" name="telefono" placeholder="Ej. 999 999 999" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="afDireccion">Dirección</label>
+                        <input type="text" id="afDireccion" name="direccion" placeholder="Av. Larco 123, Trujillo" required>
+                    </div>
+                    <button type="submit" class="btn-novaclub" style="width: 100%; margin-top:10px;">Confirmar afiliación</button>
+                </form>
+            </div>
+
+            <div id="afiliacionExito" style="display:none; text-align:center; padding: 10px 0;">
+                <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #20A477; margin-bottom: 15px;"></i>
+                <h2 style="color: #144D6C;">¡Bienvenido a NovaClub!</h2>
+                <p style="color:#555;">Tu afiliación se realizó con éxito. Ya puedes empezar a acumular NovaPuntos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Inicio de Sesión: se inyecta también dinámicamente desde app.js
+         en el resto de páginas, pero aquí va fijo para que cargue de inmediato. -->
+    <div id="modalLogin" class="modal-overlay">
+        <div class="modal-content modal-formulario">
+            <button id="cerrarModalLogin" class="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
+
+            <div id="loginVistaOpciones">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                    <i class="fa-solid fa-circle-user" style="font-size:1.8rem; color:#144D6C;"></i>
+                    <h2 style="color:#144D6C; margin:0;">Iniciar sesión</h2>
+                </div>
+                <p style="color:#555; margin-bottom:20px;">Ingresa a tu cuenta para una mejor experiencia</p>
+
+                <div class="login-opciones">
+                    <button type="button" class="btn-login-opcion" data-proveedor="Facebook"><i class="fa-brands fa-facebook" style="color:#1877F2;"></i> Ingresa con Facebook</button>
+                    <button type="button" class="btn-login-opcion" data-proveedor="Google"><i class="fa-brands fa-google" style="color:#EA4335;"></i> Ingresa con Google</button>
+                    <button type="button" class="btn-login-opcion" data-proveedor="Apple"><i class="fa-brands fa-apple" style="color:#000;"></i> Ingresa con Apple</button>
+                    <button type="button" class="btn-login-opcion btn-login-correo" data-proveedor="Correo"><i class="fa-solid fa-envelope"></i> Ingresa con correo electrónico</button>
+                </div>
+
+                <div class="login-enlaces" style="text-align:center; margin-top:20px;">
+                    <a href="#" id="linkOlvideContrasena" style="font-size:0.9rem;">¿Olvidaste tu contraseña?</a>
+                    <p style="margin-top:12px; font-size:0.9rem; color:#555;">¿Aún no tienes cuenta? <a href="#" id="linkRegistrate">Regístrate</a></p>
+                </div>
+            </div>
+
+            <div id="loginVistaFormulario" style="display:none;">
+                <h2 id="loginFormTitulo" style="color:#144D6C; text-align:left;"><i class="fa-solid fa-user-lock" style="color:#20A477;"></i> Ingresa tus datos</h2>
+                <p style="text-align:left; color:#555; margin-bottom:20px;" id="loginFormSubtitulo">Completa tus datos para continuar.</p>
+                <form id="formLogin">
+                    <div class="grupo-input-generico">
+                        <label for="logNombre">Nombre Completo</label>
+                        <input type="text" id="logNombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="logDni">Documento de Identidad</label>
+                        <input type="text" id="logDni" name="dni" placeholder="Ej. 74589632" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="logCorreo">Correo Electrónico</label>
+                        <input type="email" id="logCorreo" name="correo" placeholder="juan.perez@correo.com" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="logContrasena">Contraseña</label>
+                        <input type="password" id="logContrasena" name="contrasena" placeholder="••••••••" required minlength="6">
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="logTelefono">Número de Celular</label>
+                        <input type="tel" id="logTelefono" name="telefono" placeholder="Ej. 999 999 999" required>
+                    </div>
+                    <div class="grupo-input-generico">
+                        <label for="logDireccion">Dirección</label>
+                        <input type="text" id="logDireccion" name="direccion" placeholder="Av. Larco 123, Trujillo" required>
+                    </div>
+                    <button type="submit" class="btn-novaclub" style="width:100%; margin-top:10px;">Ingresar</button>
+                </form>
+                <p style="text-align:center; margin-top:15px;">
+                    <a href="#" id="linkVolverOpciones" style="color:#144D6C; font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+                </p>
+            </div>
+
+            <div id="loginVistaRecuperar" style="display:none; text-align:left;">
+                <h2 style="color:#144D6C;"><i class="fa-solid fa-key" style="color:#F2C278;"></i> Recuperar contraseña</h2>
+                <p style="color:#555; margin-bottom:20px;">Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+                <form id="formRecuperar">
+                    <div class="grupo-input-generico">
+                        <label for="recCorreo">Correo Electrónico</label>
+                        <input type="email" id="recCorreo" placeholder="juan.perez@correo.com" required>
+                    </div>
+                    <button type="submit" class="btn-novaclub" style="width:100%;">Enviar enlace</button>
+                </form>
+                <p style="text-align:center; margin-top:15px;">
+                    <a href="#" id="linkVolverOpciones2" style="color:#144D6C; font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+                </p>
+            </div>
+
+            <div id="loginVistaExito" style="display:none; text-align:center; padding: 10px 0;">
+                <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #20A477; margin-bottom: 15px;"></i>
+                <h2 style="color: #144D6C;" id="loginExitoTitulo">¡Bienvenido a FarmaNova!</h2>
+                <p style="color:#555;" id="loginExitoTexto">Iniciaste sesión correctamente.</p>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-oficial" style="padding: 0; border: none;">
+    <img src="Imagenes/header.jpg" alt="Banner FarmaNova" class="img-banner">
+    </header>
+
+    <nav class="menu">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="pages/catalogo.html"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="pages/nosotros.html"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="pages/blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" class="badge-carrito">0</span>
+        </a>
+        <a href="#" id="abrirLogin"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="pages/compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <section class="contenedor-inicio">
+        <div class="banners-grid">
+            <div class="banner-promo banner-principal" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('Imagenes/ImagenFondo.jpg'); background-size: cover; background-position: center;">
+                <div>
+                    <h2 style="color: #ffffff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">Súper Días FarmaNova</h2>
+                    <p style="color: #f4f7fb; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);">Hasta 40% de descuento en la categoría de Dermocosmética e Higiene.</p>
+                </div>
+            </div>
+            <a href="pages/catalogo.html?filtro=bienestar" class="banner-promo banner-secundario" style="text-decoration:none; color:inherit; cursor:pointer;">
+                <h3>Pack Botiquín</h3>
+                <p>Arma tu botiquín desde S/ 19.90</p>
+                <i class="fa-solid fa-suitcase-medical" style="font-size: 3em; margin-top: 10px; opacity: 0.8;"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="seccion-novaclub">
+        <div class="novaclub-contenido">
+            <h2>💎 Programa de Fidelidad NovaClub</h2>
+            <p>Únase a nuestro programa exclusivo. Acumule <strong>NovaPuntos</strong> por cada transacción, acceda a tarifas preferenciales y obtenga envío gratuito. Su bienestar es nuestra prioridad.</p>
+            <button class="btn-novaclub" id="btnAfiliarse">Afiliarse sin costo</button>
+        </div>
+        <div class="novaclub-img"><i class="fa-solid fa-ranking-star"></i></div>
+    </section>
+
+    <section class="contenedor-inicio">
+        <div class="banner-seccion banner-ofertas">
+            <h2 class="titulo-seccion"><i class="fa-solid fa-fire"></i> Súper Ofertas de la Semana</h2>
+        </div>
+        <div id="ofertas-preview" class="grid-productos-preview"></div>
+
+        <div class="banner-seccion banner-derma" style="margin-top: 40px;">
+            <h2 class="titulo-seccion"><i class="fa-solid fa-pump-soap"></i> Limpieza Facial y Piel</h2>
+        </div>
+        <div id="derma-preview" class="grid-productos-preview"></div>
+        
+        <div class="banner-seccion banner-botiquin" style="margin-top: 40px;">
+            <h2 class="titulo-seccion"><i class="fa-solid fa-band-aid"></i> Cuidado de Heridas y Botiquín</h2>
+        </div>
+        <div id="botiquin-preview" class="grid-productos-preview"></div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="pages/catalogo.html" class="btn-ver-mas">Ver todo el catálogo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="pages/nosotros.html">Nuestra Empresa</a>
+                <a href="pages/catalogo.html">Catálogo Virtual</a>
+                <a href="pages/blog.html">Blog de Salud</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="pages/terminos.html">Términos y Condiciones</a>
+                <a href="pages/politicas.html">Políticas de Privacidad</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="pages/contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="app/app.js"></script>
+</body>
+</html>

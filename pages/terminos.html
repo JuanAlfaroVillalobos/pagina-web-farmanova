@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <header class="header-oficial">
+    <img src="../Imagenes/header.jpg" alt="FarmaNova Logo" class="img-logo">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html" style="color: #ffffff;"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html" style="color: #ffffff;"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html" style="color: #ffffff;"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html" style="color: #ffffff;"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito" style="position: relative; color: #ffffff;">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" style="position: absolute; top: -10px; right: -15px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; font-weight: bold;">0</span>
+        </a>
+        <a href="#" id="abrirLogin" style="color: #ffffff;"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <section class="contenedor-legal">
+        <h1><i class="fa-solid fa-file-contract"></i> Términos y Condiciones</h1>
+        <p class="legal-actualizado">Última actualización: 1 de julio de 2026</p>
+
+        <p>Estos Términos y Condiciones (los "Términos") son una plantilla de referencia y regulan el uso del sitio
+        web de FarmaNova S.A.C. ("FarmaNova") y la compra de productos a través de nuestro catálogo virtual. Al
+        navegar por este sitio o realizar un pedido, aceptas los siguientes términos. Te recomendamos revisarlos
+        junto con un asesor legal antes de publicarlos como términos oficiales de tu empresa.</p>
+
+        <h2>1. Objeto</h2>
+        <p>FarmaNova ofrece, a través de este sitio web, información y venta en línea de medicamentos de venta
+        libre, productos de cuidado personal y artículos de bienestar, sujeto a la disponibilidad de stock y a la
+        normativa sanitaria vigente.</p>
+
+        <h2>2. Productos que requieren receta médica</h2>
+        <p>Los medicamentos que por ley requieren receta médica solo podrán ser dispensados presentando la receta
+        correspondiente al momento de la entrega o recojo en tienda. FarmaNova se reserva el derecho de no despachar
+        un pedido si no se cumple con este requisito.</p>
+
+        <h2>3. Precios y disponibilidad</h2>
+        <p>Los precios mostrados en el catálogo incluyen los impuestos de ley aplicables y están expresados en
+        Soles (S/). FarmaNova puede modificar precios y promociones sin previo aviso. La disponibilidad de stock se
+        confirma al momento de procesar el pedido.</p>
+
+        <h2>4. Proceso de compra</h2>
+        <p>Para completar una compra, el usuario debe proporcionar datos verídicos: nombre completo, documento de
+        identidad, correo electrónico, número de celular y dirección de envío. FarmaNova podrá contactar al
+        usuario para validar la información antes de confirmar el despacho del pedido.</p>
+
+        <h2>5. Métodos de pago</h2>
+        <p>Aceptamos tarjeta de crédito o débito, billeteras digitales (Yape / Plin) y pago contra entrega, según
+        disponibilidad en la zona de despacho seleccionada.</p>
+
+        <h2>6. Programa de fidelidad NovaClub</h2>
+        <p>La afiliación a NovaClub es gratuita y voluntaria. Los NovaPuntos acumulados no tienen valor monetario,
+        no son transferibles a terceros y podrán canjearse únicamente por los beneficios y descuentos que FarmaNova
+        determine en cada campaña.</p>
+
+        <h2>7. Cambios, devoluciones y garantías</h2>
+        <p>Por razones de seguridad sanitaria, los medicamentos y productos de cuidado personal no admiten cambio
+        ni devolución una vez entregado el pedido, salvo error atribuible a FarmaNova (producto distinto al
+        solicitado, empaque dañado o vencido), caso en el cual deberá reportarse dentro de las 24 horas siguientes
+        a la recepción a través de nuestra <a href="contacto.html">página de contacto</a>.</p>
+
+        <h2>8. Responsabilidad del usuario</h2>
+        <p>El usuario es responsable de la veracidad de la información proporcionada y del uso adecuado de los
+        productos adquiridos, siguiendo las indicaciones del empaque, del prospecto o de un profesional de la
+        salud.</p>
+
+        <h2>9. Propiedad intelectual</h2>
+        <p>Los textos, imágenes, logotipos y demás contenidos de este sitio son propiedad de FarmaNova S.A.C. o de
+        sus respectivos licenciantes, y no pueden reproducirse sin autorización previa.</p>
+
+        <h2>10. Modificaciones</h2>
+        <p>FarmaNova podrá actualizar estos Términos en cualquier momento. Los cambios entrarán en vigencia desde su
+        publicación en esta misma página.</p>
+
+        <h2>11. Contacto</h2>
+        <p>Para consultas relacionadas con estos Términos, escríbenos a través de nuestro
+        <a href="contacto.html">formulario de contacto</a> o llama a nuestra central: (01) 612-5000.</p>
+
+        <a href="../index.html" class="btn-ver-mas" style="margin-top: 20px; display: inline-block;">
+            <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo Virtual</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="politicas.html">Políticas de Privacidad</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+</body>
+</html>

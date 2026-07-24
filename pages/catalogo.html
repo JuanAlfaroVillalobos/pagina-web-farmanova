@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <header class="header-oficial">
+    <img src="../Imagenes/header.jpg" alt="FarmaNova Logo" class="img-banner">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html" style="color: #ffffff;"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html" style="color: #F2C278;"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html" style="color: #ffffff;"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html" style="color: #ffffff;"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito" style="position: relative; color: #ffffff;">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" style="position: absolute; top: -10px; right: -15px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; font-weight: bold;">0</span>
+        </a>
+        <a href="#" id="abrirLogin" style="color: #ffffff;"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <section id="productos">
+        <h2 class="catalago">Catálogo Completo</h2>
+        
+        <span class="buscador" style="margin: 0 auto 20px auto; max-width: 600px;">
+            <input type="text" id="inputBuscador" placeholder="Buscar medicamento...">
+            <button type="button" id="btnBuscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+        </span>
+        
+        <div class="filtros-catalogo">
+            <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+            <button class="btn-filtro" data-filtro="meds">Medicamentos</button>
+            <button class="btn-filtro" data-filtro="cuidado">Cuidado Personal</button>
+            <button class="btn-filtro" data-filtro="bienestar">Bienestar</button>
+        </div>
+
+        <p id="sinResultadosCatalogo" style="display:none; text-align:center; color:#888; font-style:italic; margin: 20px 0;">
+            No se encontraron productos con ese criterio.
+        </p>
+
+        <!-- Cada categoría vive en su propia sección: así se ve, sin dudas,
+             que Medicamentos, Cuidado Personal y Bienestar son grupos distintos.
+             Los botones de arriba muestran u ocultan estas secciones. -->
+        <div id="seccion-meds" class="seccion-categoria">
+            <h3 class="titulo-categoria cat-meds"><i class="fa-solid fa-pills"></i> Medicamentos</h3>
+            <div class="productos-grid" id="grid-meds"></div>
+        </div>
+
+        <div id="seccion-cuidado" class="seccion-categoria">
+            <h3 class="titulo-categoria cat-cuidado"><i class="fa-solid fa-pump-soap"></i> Cuidado Personal</h3>
+            <div class="productos-grid" id="grid-cuidado"></div>
+        </div>
+
+        <div id="seccion-bienestar" class="seccion-categoria">
+            <h3 class="titulo-categoria cat-bienestar"><i class="fa-solid fa-heart-pulse"></i> Bienestar</h3>
+            <div class="productos-grid" id="grid-bienestar"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo del mes</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+            </div>
+            <div class="footer-column">
+                <h4>FarmaNova Digital</h4>
+                <a href="politicas.html">Políticas de Privacidad</a>
+                <a href="boticas.html"><i class="fa-solid fa-store"></i> Nuestras Boticas</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contáctanos</h4>
+                <a href="contacto.html" style="font-weight: 600; color: #20A477;"><i class="fa-solid fa-envelope"></i> Escríbenos Aquí</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Boticas - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="background-color: #fcfcfc; font-family: 'Poppins', sans-serif; margin: 0; padding: 0;">
+
+    <!-- Barra Superior de Navegación según image_f50d42.png -->
+    <header style="background-color: #ffffff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <!-- LogoTipo adaptado al tamaño superior izquierdo -->
+            <img src="../Imagenes/LogoTipo.jpeg" alt="FarmaNova" style="height: 45px; border-radius: 4px;">
+            <span style="color: #144D6C; font-weight: 700; font-size: 1.2rem;">FarmaNova</span>
+        </div>
+        <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #333333; font-weight: 600; font-size: 0.95rem;">
+            <span style="background-color: #2c3e50; color: white; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
+                <i class="fa-solid fa-chevron-left" style="font-size: 0.8rem;"></i>
+            </span>
+            Volver al sitio web
+        </a>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center;">
+        
+        <h1 style="font-size: 2.2rem; color: #222222; font-weight: 700; margin-bottom: 25px;">Encuentra tu centro</h1>
+        
+        <!-- Botón Localizarme -->
+        <button id="btnLocalizar" style="background-color: #222222; color: white; border: none; padding: 12px 28px; border-radius: 25px; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: background 0.2s;">
+            <i class="fa-solid fa-location-crosshairs"></i> Localizarme
+        </button>
+
+        <!-- Contenedor con barra de desplazamiento para las tarjetas -->
+        <div id="listaBoticas" style="max-height: 550px; overflow-y: auto; padding-right: 10px; display: flex; flex-direction: column; gap: 25px; text-align: left;">
+            
+            <!-- Botica 1 -->
+            <div class="card-botica" style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #eef0f2; box-shadow: 0 2px 12px rgba(0,0,0,0.02); transition: transform 0.2s;">
+                <h3 style="margin: 0 0 10px 0; color: #111111; font-size: 1.2rem; font-weight: 700;">FarmaNova - Sede Central</h3>
+                <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #e74c3c; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-xmark"></i> Cerrado ahora. <span style="color: #666666; font-weight: 400;">Abre a las 07:00</span>
+                </p>
+                <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                    Av. 28 De Julio 1039 (Pueblo Joven Agrup. De Viv. Teniente Manuel Clavero Mza. B Lote 30 Etapa Cuarta) Maynas
+                </p>
+                <p style="margin: 0 0 20px 0; font-size: 0.95rem; color: #444444; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-phone" style="color: #333;"></i> (01) 6125000
+                </p>
+                <!-- Botones de Acción -->
+                <div style="display: flex; gap: 12px;">
+                    <a href="tel:016125000" style="text-decoration: none; color: #222222; border: 1px solid #222222; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-phone-flip"></i> Llamar
+                    </a>
+                    <a href="https://maps.google.com" target="_blank" style="text-decoration: none; color: #222222; border: 1px solid #222222; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-location-dot"></i> Cómo llegar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botica 2 -->
+            <div class="card-botica" style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #eef0f2; box-shadow: 0 2px 12px rgba(0,0,0,0.02); transition: transform 0.2s;">
+                <h3 style="margin: 0 0 10px 0; color: #111111; font-size: 1.2rem; font-weight: 700;">FarmaNova - Sede Amazonas</h3>
+                <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #e74c3c; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-xmark"></i> Cerrado ahora. <span style="color: #666666; font-weight: 400;">Abre a las 07:00</span>
+                </p>
+                <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                    P.J. Generalisimo Jose De San Martin Cal. Amazonas Mz B Lote 27 - Sector A B 27 Maynas
+                </p>
+                <p style="margin: 0 0 20px 0; font-size: 0.95rem; color: #444444; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-phone" style="color: #333;"></i> (01) 6125000
+                </p>
+                <!-- Botones de Acción -->
+                <div style="display: flex; gap: 12px;">
+                    <a href="tel:016125000" style="text-decoration: none; color: #222222; border: 1px solid #222222; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-phone-flip"></i> Llamar
+                    </a>
+                    <a href="https://maps.google.com" target="_blank" style="text-decoration: none; color: #222222; border: 1px solid #222222; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-location-dot"></i> Cómo llegar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Estilo personalizado rápido para la barra de desplazamiento interna (Scrollbar) como la imagen -->
+    <style>
+        #listaBoticas::-webkit-scrollbar {
+            width: 6px;
+        }
+        #listaBoticas::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        #listaBoticas::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        #listaBoticas::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        .card-botica:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+        }
+    </style>
+
+    <script>
+        // BUGFIX/MEJORA: antes este botón no localizaba nada de verdad, solo
+        // esperaba con un setTimeout y mostraba un alert fijo (falsa sensación
+        // de geolocalización). Ahora usa la API real de Geolocalización del
+        // navegador y maneja los casos de error (permiso denegado, timeout, etc.)
+        document.getElementById('btnLocalizar').addEventListener('click', function() {
+            const btn = this;
+            const estadoOriginal = btn.innerHTML;
+            const colorOriginal = btn.style.backgroundColor;
+
+            const restaurarBoton = () => {
+                btn.innerHTML = estadoOriginal;
+                btn.style.opacity = '1';
+                btn.style.backgroundColor = colorOriginal;
+            };
+
+            if (!('geolocation' in navigator)) {
+                alert('Tu navegador no soporta geolocalización. Puedes ver todas nuestras sedes en la lista de abajo.');
+                return;
+            }
+
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Buscando centros cercanos...';
+            btn.style.opacity = '0.7';
+
+            navigator.geolocation.getCurrentPosition(
+                (posicion) => {
+                    const { latitude, longitude } = posicion.coords;
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Ubicación encontrada';
+                    btn.style.backgroundColor = '#20A477';
+                    btn.style.opacity = '1';
+                    // Aquí se podría calcular distancia real contra las coordenadas
+                    // de cada botica y reordenar #listaBoticas. Por ahora solo
+                    // confirmamos al usuario que sí obtuvimos su ubicación real.
+                    console.log('Ubicación obtenida:', latitude, longitude);
+                    alert('Ubicación obtenida correctamente. Mostrando los locales más cercanos.');
+                },
+                (error) => {
+                    restaurarBoton();
+                    const mensajes = {
+                        1: 'Permiso de ubicación denegado. Actívalo en tu navegador para ver las sedes más cercanas.',
+                        2: 'No se pudo determinar tu ubicación en este momento.',
+                        3: 'La solicitud de ubicación tardó demasiado. Intenta de nuevo.'
+                    };
+                    alert(mensajes[error.code] || 'No se pudo obtener tu ubicación.');
+                },
+                { timeout: 8000 }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="layout-base">
+    
+    <header class="header-oficial">
+    <img src="../Imagenes/LogoTipo.jpeg" alt="FarmaNova Logo" class="img-logo">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" class="badge-carrito">0</span>
+        </a>
+        <a href="#" id="abrirLogin"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <main class="contacto-main">
+        <div id="contenedorContacto" class="contenedor-contacto-fijo">
+            <div>
+                <h2>Escríbenos</h2>
+                <form class="form-contacto-fijo" onsubmit="event.preventDefault(); document.getElementById('contenedorContacto').style.display='none'; document.getElementById('pantallaAgradecimiento').style.display='block';">
+                    <input type="text" id="nombreContacto" name="nombre" placeholder="Tu Nombre" autocomplete="name" required>
+                    <input type="email" id="correoContacto" name="correo" placeholder="Tu Correo Electrónico" autocomplete="email" required>
+                    <textarea id="mensajeContacto" name="mensaje" placeholder="¿En qué podemos ayudarte?" rows="5" required></textarea>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="contacto-info">
+                <h2>Información</h2>
+                <div class="info-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <p><strong>Número:</strong> +51 999 999 999</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><strong>Correo:</strong> UtpNota20@farmanova.com</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p><strong>Ubicación:</strong> Trujillo, Perú</p>
+                </div>
+            </div>
+        </div>
+
+    <!-- Pantalla de Éxito (Sigue igual de paja) -->
+    <div id="pantallaAgradecimiento" style="display: none; background: white; padding: 50px 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 500px; margin: 40px auto; text-align: center;">
+        <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: #20A477; margin-bottom: 20px;"></i>
+        <h2 style="color: #144D6C; font-weight: 700;">¡Gracias por escribirnos!</h2>
+        <p style="color: #555; margin-bottom: 30px;">Nuestro equipo se pondrá en contacto contigo lo antes posible.</p>
+        <a href="../index.html" style="background: #144D6C; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold;">Volver al Inicio</a>
+    </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo Virtual</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="politicas.html">Políticas de Privacidad</a>
+                <a href="boticas.html"><i class="fa-solid fa-store"></i> Nuestras Boticas</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+</body>
+</html>

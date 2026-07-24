@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Salud - FarmaNova</title>
+    <link rel="icon" type="image/jpeg" href="../Imagenes/LogoTipo.jpeg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <header class="header-oficial">
+    <img src="../Imagenes/header.jpg" alt="FarmaNova Logo" class="img-banner">
+    </header>
+
+    <nav class="menu">
+        <a href="../index.html" style="color: #ffffff;"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="catalogo.html" style="color: #ffffff;"><i class="fa-solid fa-pills"></i> Catálogo</a>
+        <a href="nosotros.html" style="color: #ffffff;"><i class="fa-solid fa-circle-info"></i> Nosotros</a>
+        <a href="blog.html" style="color: #F2C278;"><i class="fa-solid fa-newspaper"></i> Blog</a>
+        <a href="#" id="abrirCarrito" style="position: relative; color: #ffffff;">
+            <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+            <span id="contadorCarrito" style="position: absolute; top: -10px; right: -15px; background: #e74c3c; color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; font-weight: bold;">0</span>
+        </a>
+        <a href="#" id="abrirLogin" style="color: #ffffff;"><i class="fa-solid fa-right-to-bracket"></i> <span id="textoLogin">Iniciar sesión</span></a>
+    </nav>
+
+    <div id="carritoPanel" class="carrito-panel">
+        <div class="carrito-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button id="cerrarCarrito" class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carritoItems" class="carrito-items"></div>
+        <div class="carrito-footer">
+            <div class="carrito-total"><span>Total:</span><span id="totalCarrito">S/ 0.00</span></div>
+            <a href="compra.html" id="btnIrAPagar" class="btn-pagar-carrito disabled">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <section class="contenedor-inicio" style="margin-top: 30px;">
+        <div class="banner-seccion banner-derma">
+            <h2 class="titulo-seccion"><i class="fa-solid fa-newspaper"></i> Blog FarmaNova</h2>
+        </div>
+        <p style="text-align:center; color:#555; max-width: 650px; margin: 0 auto 25px auto;">
+            Consejos, novedades y notas de salud pensadas para ti y tu familia.
+        </p>
+
+        <div class="filtros-blog" id="filtrosBlog">
+            <button class="btn-filtro activo" data-tema="todos">Todos los temas</button>
+            <button class="btn-filtro" data-tema="consejos">Consejos</button>
+            <button class="btn-filtro" data-tema="eventos">Eventos Especiales</button>
+            <button class="btn-filtro" data-tema="noticias">Noticias</button>
+            <button class="btn-filtro" data-tema="salud">Salud</button>
+        </div>
+
+        <div class="grid-blog" id="grid-blog"></div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>FarmaNova</h4>
+                <a href="nosotros.html">Sobre Nosotros</a>
+                <a href="catalogo.html">Catálogo Virtual</a>
+                <a href="blog.html">Blog de Salud</a>
+            </div>
+            <div class="footer-column">
+                <h4>Marco Legal</h4>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="politicas.html">Políticas de Privacidad</a>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <a href="contacto.html" style="color: #20A477;"><i class="fa-solid fa-envelope"></i> Contáctenos</a>
+                <span class="footer-info">Central: (01) 612-5000</span>
+            </div>
+        </div>
+        <div class="footer-bottom"><p><i class="fa-regular fa-copyright"></i> 2026 FarmaNova S.A.C. - Todos los derechos reservados.</p></div>
+    </footer>
+
+    <script src="../app/app.js"></script>
+    <script>
+        // Contenido del blog: se maneja localmente en esta página porque
+        // no depende del catálogo de productos ni del carrito.
+        const ARTICULOS_BLOG = [
+            {
+                tema: 'consejos',
+                etiqueta: 'Consejos',
+                fecha: 'Julio 2026',
+                titulo: '¿Qué es agua micelar y para qué sirve?',
+                img: '../Imagenes/AguaMicelar.webp'
+            },
+            {
+                tema: 'salud',
+                etiqueta: 'Salud',
+                fecha: 'Julio 2026',
+                titulo: 'Vitaminas esenciales para reforzar tus defensas',
+                img: '../Imagenes/Vitamina.jpg'
+            },
+            {
+                tema: 'eventos',
+                etiqueta: 'Eventos Especiales',
+                fecha: 'Julio 2026',
+                titulo: 'Súper Días FarmaNova: hasta 40% de descuento en dermocosmética',
+                img: '../Imagenes/ImagenPromocion.png'
+            },
+            {
+                tema: 'consejos',
+                etiqueta: 'Consejos',
+                fecha: 'Junio 2026',
+                titulo: 'Protector solar: por qué usarlo todos los días, incluso nublado',
+                img: '../Imagenes/ProtectorSolar.webp'
+            },
+            {
+                tema: 'salud',
+                etiqueta: 'Salud',
+                fecha: 'Junio 2026',
+                titulo: 'Colágeno: beneficios reales para la piel y las articulaciones',
+                img: '../Imagenes/Colageno.jpg'
+            },
+            {
+                tema: 'salud',
+                etiqueta: 'Salud',
+                fecha: 'Junio 2026',
+                titulo: 'Omega 3: qué aporta a tu salud cardiovascular',
+                img: '../Imagenes/Omega3.webp'
+            },
+            {
+                tema: 'noticias',
+                etiqueta: 'Noticias',
+                fecha: 'Junio 2026',
+                titulo: 'FarmaNova amplía su red de boticas a nivel nacional',
+                img: '../Imagenes/header.jpg'
+            },
+            {
+                tema: 'consejos',
+                etiqueta: 'Consejos',
+                fecha: 'Mayo 2026',
+                titulo: 'Cuidado de heridas leves: primeros pasos en casa',
+                img: '../Imagenes/Curitas.jpg'
+            }
+        ];
+
+        function pintarBlog(tema) {
+            const grid = document.getElementById('grid-blog');
+            const lista = tema === 'todos' ? ARTICULOS_BLOG : ARTICULOS_BLOG.filter(a => a.tema === tema);
+            grid.innerHTML = lista.map(a => `
+                <div class="card-blog">
+                    <div class="card-blog-imgwrap">
+                        <img src="${a.img}" alt="${a.titulo}" loading="lazy">
+                    </div>
+                    <div class="card-blog-body">
+                        <span class="card-blog-categoria">${a.etiqueta}</span>
+                        <div class="card-blog-fecha">${a.fecha} · FarmaNova</div>
+                        <h3 class="card-blog-titulo">${a.titulo}</h3>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.querySelectorAll('#filtrosBlog .btn-filtro').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#filtrosBlog .btn-filtro').forEach(b => b.classList.remove('activo'));
+                btn.classList.add('activo');
+                pintarBlog(btn.dataset.tema);
+            });
+        });
+
+        pintarBlog('todos');
+    </script>
+</body>
+</html>
